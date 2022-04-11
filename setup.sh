@@ -13,13 +13,43 @@ applications["Slack"]="slack"
 applications["Spectacle"]="spectacle"
 applications["Spotify"]="spotify"
 applications["Statusfy"]="statusfy"
+applications["Tunnelblick"]="tunnelblick"
 applications["Visual Studio Code"]="visual-studio-code"
+applications["Zoom"]="zoom"
+applications["Figma"]="figma"
+applications["Loom"]="loom"
+applications["VLC"]="vlc"
+applications["Authy"]="authy"
 
+# ------------------------------------------------------------------------------------------------
+
+declare -A cli_tools
+
+cli_tools["AWS CLI"]="awscli"
+cli_tools["jq"]="jq"
+cli_tools["Docker Credential Helper ECR"]="docker-credential-helper-ecr"
+cli_tools["node.js"]="node"
+cli_tools["nvm"]="nvm"
+cli_tools["tldr"]="tldr"
+cli_tools["tree"]="tree"
 
 # ------------------------------------------------------------------------------------------------
 
 bold=$(tput bold)
 normal=$(tput sgr0)
+
+# ------------------------------------------------------------------------------------------------
+
+install_oh_my_zshell() {
+  echo "👉 Checking for ${bold}oh my zsh${normal}"
+  echo ""
+  if [[ ! -f ~/.zshrc ]]; then
+    echo "    ❗ No installation found, installing..."
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  else
+    echo "    Found oh-my-zsh 👌"
+  fi
+}
 
 # ------------------------------------------------------------------------------------------------
 
@@ -29,8 +59,31 @@ install_homebrew() {
     echo "🍺🍺🍺 ${bold}First, installing Homebrew${normal} 🍺🍺🍺"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   else
-    echo "🍺🍺🍺 ${bold}Homebrew already installed${normal} 🍺🍺🍺"
+    echo ""
+    echo "🍺 ${bold}Homebrew already installed${normal} 👌"
   fi
+  echo ""
+}
+
+# ------------------------------------------------------------------------------------------------
+
+install_cask_with_homebrew() {
+  echo $1 | tr -d '"' | read name
+
+  echo "🔹 ${bold}$name${normal}"
+  echo ""
+
+  application_path="/Applications/$name.app"
+
+  if [[ -f $application_path || -d $application_path ]]; then
+    echo "   Found in Applications 👌"
+  elif brew list $2 &>/dev/null; then
+    echo "   Found installation with brew 👌"
+  else
+    echo "    ⚠ No installation found, installing with brew"
+    brew install --cask $2 && echo "${bold}$app${normal} installed ✅"
+  fi
+  echo ""
 }
 
 # ------------------------------------------------------------------------------------------------
@@ -38,18 +91,15 @@ install_homebrew() {
 install_with_homebrew() {
   echo $1 | tr -d '"' | read name
 
-  echo "· ${bold}$name${normal}"
+  echo "🔹 ${bold}$name${normal}"
   echo ""
 
-  application_path="/Applications/$name.app"
-
-  if [[ -f $application_path || -d $application_path ]]; then
-    echo "    Found in Applications 👌"
-  elif brew list $2 &>/dev/null; then
-    echo "    Found installation with brew 👌"
+  if brew ls --versions $2 > /dev/null; then
+    echo "   Tool already installed 👌"
   else
-    echo "    👉 No installation found, installing with brew"
-    brew install --cask $2 && echo "${bold}$app${normal} installed ✅"
+    echo "   ❗ Tool not found, installing with brew"
+    echo ""
+    brew install $2 && echo "${bold}$1${normal}"
   fi
   echo ""
 }
@@ -68,6 +118,13 @@ echo "👉 Checking for applications to install"
 echo ""
 
 for name safe_name in ${(kv)applications}; do
+  install_cask_with_homebrew $name $safe_name
+done
+
+echo "👉 Checking for CLI tools to install"
+echo ""
+
+for name safe_name in ${(kv)cli_tools}; do
   install_with_homebrew $name $safe_name
 done
 
