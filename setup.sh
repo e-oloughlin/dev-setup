@@ -20,18 +20,21 @@ applications["Figma"]="figma"
 applications["Loom"]="loom"
 applications["VLC"]="vlc"
 applications["Authy"]="authy"
+applications["Obsidian"]="obsidian"
 
 # ------------------------------------------------------------------------------------------------
 
 declare -A cli_tools
 
+cli_tools["node.js"]="node"
 cli_tools["AWS CLI"]="awscli"
 cli_tools["jq"]="jq"
+cli_tools["htmlq"]="htmlq"
 cli_tools["Docker Credential Helper ECR"]="docker-credential-helper-ecr"
-cli_tools["node.js"]="node"
 cli_tools["nvm"]="nvm"
 cli_tools["tldr"]="tldr"
 cli_tools["tree"]="tree"
+cli_tools["pnpm"]="pnpm"
 
 # ------------------------------------------------------------------------------------------------
 
@@ -114,18 +117,18 @@ install_homebrew
 
 # ------------------------------------------------------------------------------------------------
 
-echo "👉 Checking for applications to install"
-echo ""
-
-for name safe_name in ${(kv)applications}; do
-  install_cask_with_homebrew $name $safe_name
-done
-
 echo "👉 Checking for CLI tools to install"
 echo ""
 
 for name safe_name in ${(kv)cli_tools}; do
   install_with_homebrew $name $safe_name
+done
+
+echo "👉 Checking for applications to install"
+echo ""
+
+for name safe_name in ${(kv)applications}; do
+  install_cask_with_homebrew $name $safe_name
 done
 
 echo "🤙 Computer all set up for development 😇"
