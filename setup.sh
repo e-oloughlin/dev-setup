@@ -1,8 +1,8 @@
 #!/bin/zsh
 declare -A applications
 
-applications["Alfred 4"]="alfred"
-applications["Alt-C"]="alt-c"
+applications["Alfred"]="alfred"
+# applications["Alt-C"]="alt-c"
 applications["Bluesnooze"]="bluesnooze"
 applications["Google Chrome"]="google-chrome"
 applications["Docker"]="docker"
@@ -13,14 +13,16 @@ applications["Slack"]="slack"
 applications["Spectacle"]="spectacle"
 applications["Spotify"]="spotify"
 applications["Statusfy"]="statusfy"
+applications["Sourcetree"]="sourcetree"
 applications["Tunnelblick"]="tunnelblick"
 applications["Visual Studio Code"]="visual-studio-code"
-applications["Zoom"]="zoom"
+# applications["Zoom"]="zoom"
 applications["Figma"]="figma"
 applications["Loom"]="loom"
 applications["VLC"]="vlc"
 applications["Authy"]="authy"
 applications["Obsidian"]="obsidian"
+applications["Viscosity"]="viscosity"
 
 # ------------------------------------------------------------------------------------------------
 
@@ -35,6 +37,7 @@ cli_tools["nvm"]="nvm"
 cli_tools["tldr"]="tldr"
 cli_tools["tree"]="tree"
 cli_tools["pnpm"]="pnpm"
+cli_tools["Salesforce CLI"]="sfdx"
 
 # ------------------------------------------------------------------------------------------------
 
