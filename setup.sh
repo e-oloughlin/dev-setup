@@ -38,6 +38,7 @@ cli_tools["tldr"]="tldr"
 cli_tools["tree"]="tree"
 cli_tools["pnpm"]="pnpm"
 cli_tools["Salesforce CLI"]="sfdx"
+cli_tools["ngrok"]="ngrok"
 
 # ------------------------------------------------------------------------------------------------
 
