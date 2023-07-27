@@ -2,7 +2,7 @@
 declare -A applications
 
 applications["Alfred"]="alfred"
-# applications["Alt-C"]="alt-c"
+applications["Alt-C"]="alt-c"
 applications["Bluesnooze"]="bluesnooze"
 applications["Google Chrome"]="google-chrome"
 applications["Docker"]="docker"
@@ -10,19 +10,20 @@ applications["Firefox"]="firefox"
 applications["iTerm"]="iterm2"
 applications["Postman"]="postman"
 applications["Slack"]="slack"
-applications["Spectacle"]="spectacle"
+applications["Rectangle"]="rectangle"
+
 applications["Spotify"]="spotify"
 applications["Statusfy"]="statusfy"
-applications["Sourcetree"]="sourcetree"
 applications["Tunnelblick"]="tunnelblick"
 applications["Visual Studio Code"]="visual-studio-code"
 # applications["Zoom"]="zoom"
-applications["Figma"]="figma"
-applications["Loom"]="loom"
+# applications["Figma"]="figma"
+# applications["Loom"]="loom"
 applications["VLC"]="vlc"
 applications["Authy"]="authy"
 applications["Obsidian"]="obsidian"
 applications["Viscosity"]="viscosity"
+applications["Android Studio"]="android-studio"
 
 # ------------------------------------------------------------------------------------------------
 
@@ -37,7 +38,7 @@ cli_tools["nvm"]="nvm"
 cli_tools["tldr"]="tldr"
 cli_tools["tree"]="tree"
 cli_tools["pnpm"]="pnpm"
-cli_tools["Salesforce CLI"]="sfdx"
+# cli_tools["Salesforce CLI"]="sfdx"
 cli_tools["ngrok"]="ngrok"
 
 # ------------------------------------------------------------------------------------------------
@@ -101,7 +102,7 @@ install_with_homebrew() {
   echo "🔹 ${bold}$name${normal}"
   echo ""
 
-  if brew ls --versions $2 > /dev/null; then
+  if brew list --versions $2 > /dev/null; then
     echo "   Tool already installed 👌"
   else
     echo "   ❗ Tool not found, installing with brew"
