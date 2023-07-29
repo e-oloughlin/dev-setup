@@ -1,0 +1,5 @@
+# Switch profile
+alias aws-profile-personal="export AWS_PROFILE=personal && echo 'aws profile -> personal'"
+
+# Show parameter details (append name to end)
+alias show-param="aws ssm get-parameter --with-decryption --name"

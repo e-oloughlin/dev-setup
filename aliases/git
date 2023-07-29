@@ -1,0 +1,24 @@
+# GIT aliases
+
+alias gs="clear && git status"
+# alias gd="git diff -- ':(exclude)**/*/package-lock.json'"
+alias gd="git diff -- . ':(exclude)package-lock.json' ':(exclude)**/*/package-lock.json'"
+alias gl="git log"
+alias gpl="git pull"
+alias gp="git push"
+alias gpf="git push --force"
+alias glg="git log --graph --stat"
+alias gl1l="git log --pretty=oneline"
+alias gc="git checkout"
+alias gcm="git commit -m"
+alias gacm="git commit -am"
+alias gch="git checkout HEAD"
+alias gpso="git push --set-upstream origin"
+alias gtemp="git add . && git commit -m 'temp'"
+alias head-1="git reset HEAD~1"
+alias gllr="git log --left-right --graph --cherry-pick --oneline"
+alias gb="clear && git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
+alias gbg="gb | grep"
+alias gsg="git status | grep"
+alias gk=gl
+
