@@ -10,20 +10,29 @@ applications["iTerm"]="iterm2"
 applications["Postman"]="postman"
 applications["Slack"]="slack"
 applications["Rectangle"]="rectangle"
-
 applications["Spotify"]="spotify"
 applications["Statusfy"]="statusfy"
 applications["Tunnelblick"]="tunnelblick"
 applications["Visual Studio Code"]="visual-studio-code"
-# applications["Zoom"]="zoom"
-# applications["Figma"]="figma"
-# applications["Loom"]="loom"
-applications["VLC"]="vlc"
 applications["Authy"]="authy"
 applications["Obsidian"]="obsidian"
 applications["Viscosity"]="viscosity"
-# applications["Android Studio"]="android-studio"
 
+# ------------------------------------------------------------------------------------------------
+# Optional applications
+# ------------------------------------------------------------------------------------------------
+# applications["Android Studio"]="android-studio"
+# applications["Figma"]="figma"
+# applications["Loom"]="loom"
+# applications["VLC"]="vlc"
+# applications["Zoom"]="zoom"
+# ------------------------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------------------------
+# Genesys Applications
+# ------------------------------------------------------------------------------------------------
+applications["Intellij community edition"]="intellij-idea-ce"
+applications["Chrome driver"]="chromedriver"
 # ------------------------------------------------------------------------------------------------
 
 declare -A cli_tools
@@ -32,21 +41,35 @@ cli_tools["node.js"]="node"
 cli_tools["AWS CLI"]="awscli"
 cli_tools["jq"]="jq"
 cli_tools["htmlq"]="htmlq"
-cli_tools["Docker Credential Helper ECR"]="docker-credential-helper-ecr"
 cli_tools["nvm"]="nvm"
 cli_tools["tldr"]="tldr"
 cli_tools["tree"]="tree"
-cli_tools["pnpm"]="pnpm"
-# cli_tools["Salesforce CLI"]="sfdx"
-cli_tools["ngrok"]="ngrok"
-cli_tools["Snyk"]="snyk"
 
+# ------------------------------------------------------------------------------------------------
+# Optional CLI tools
+# ------------------------------------------------------------------------------------------------
+# cli_tools["ngrok"]="ngrok"
+# cli_tools["Docker Credential Helper ECR"]="docker-credential-helper-ecr"
+# cli_tools["pnpm"]="pnpm"
+cli_tools["go"]="go"
+# ------------------------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------------------------
+# Genesys CLI tools
+# ------------------------------------------------------------------------------------------------
+cli_tools["Snyk"]="snyk"
+cli_tools["JDK11"]="openjdk@11"
+cli_tools["Maven"]="maven"
+cli_tools["Python"]="python"
+cli_tools["Gecko driver"]="geckodriver"
 # ------------------------------------------------------------------------------------------------
 
 declare -A brew_taps
 
+# ------------------------------------------------------------------------------------------------
+# Genesys taps
+# ------------------------------------------------------------------------------------------------
 brew_taps["Snyk"]="snyk/tap"
-
 # ------------------------------------------------------------------------------------------------
 
 bold=$(tput bold)
