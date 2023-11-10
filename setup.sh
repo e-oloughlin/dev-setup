@@ -51,7 +51,8 @@ cli_tools["tree"]="tree"
 # cli_tools["ngrok"]="ngrok"
 # cli_tools["Docker Credential Helper ECR"]="docker-credential-helper-ecr"
 # cli_tools["pnpm"]="pnpm"
-cli_tools["go"]="go"
+# cli_tools["go"]="go"
+# cli_tools["gopls"]="gopls"
 # ------------------------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------------------------
