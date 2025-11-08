@@ -16,6 +16,7 @@ applications["Statusfy"]="statusfy"
 applications["Visual Studio Code"]="visual-studio-code"
 # applications["Obsidian"]="obsidian"
 applications["Viscosity"]="viscosity"
+applications["Alfred"]="alfred"
 
 # ------------------------------------------------------------------------------------------------
 # Optional applications
@@ -28,7 +29,7 @@ applications["Viscosity"]="viscosity"
 # ------------------------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------------------------
-# Genesys Applications
+# Company Applications
 # ------------------------------------------------------------------------------------------------
 applications["Intellij community edition"]="intellij-idea-ce"
 applications["Chrome driver"]="chromedriver"
@@ -55,7 +56,7 @@ cli_tools["tree"]="tree"
 # ------------------------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------------------------
-# Genesys CLI tools
+# Company CLI tools
 # ------------------------------------------------------------------------------------------------
 cli_tools["Snyk"]="snyk"
 cli_tools["JDK11"]="openjdk@11"
@@ -67,7 +68,7 @@ cli_tools["Gecko driver"]="geckodriver"
 declare -A brew_taps
 
 # ------------------------------------------------------------------------------------------------
-# Genesys taps
+# Company taps
 # ------------------------------------------------------------------------------------------------
 brew_taps["Snyk"]="snyk/tap"
 # ------------------------------------------------------------------------------------------------
