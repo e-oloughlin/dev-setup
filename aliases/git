@@ -21,4 +21,4 @@ alias gb="clear && git for-each-ref --count=30 --sort=-committerdate refs/heads/
 alias gbg="gb | grep"
 alias gsg="git status | grep"
 alias gk=gl
-
+alias wip="git status && git add . && git commit -m 'Work in Progress'"
